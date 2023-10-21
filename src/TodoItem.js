@@ -1,8 +1,9 @@
 function TodoItem(props){
     return(
           <li className="item border rounded border-0">
+            <i class='bx bx-task'></i>
             <p className="text-item">{props.text}</p>
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <i class='bx bx-task-x' ></i>
           </li>
     );
 }

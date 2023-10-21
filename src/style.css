@@ -7,11 +7,11 @@
     --dark-shadow: #040b14;
     --white-light: #ffffffe6;
     --color1 : #00c1ff;
-    
     --color2 : #0073d2;
     --color3 : #ff707a;
     --color4 : #ffca2c;
     --color5 : #ffffda;
+    --color6 : #90ffb1;
 }
 body {
     font-family: "Open Sans", sans-serif;
@@ -153,9 +153,21 @@ body {
     text-decoration: line-through;
 }
 
-.btn-close{
+.bx-task,
+.bx-task-x{
+    font-size: 2rem;
     margin-right: 10px;
-    background-color: var(--color1);
+    margin-left: 10px;
+}
+
+
+.bx-task-x:hover{
+    color: var(--color3);
+    cursor: pointer;
+}
+.bx-task:hover{
+    color: var(--color6);
+    cursor: pointer;
 }
 /*--------------------------------------------------------------
 # TodoSearch
