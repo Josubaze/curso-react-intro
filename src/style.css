@@ -1,0 +1,194 @@
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+:root{
+    --dark-shadow: #040b14;
+    --white-light: #ffffffe6;
+    --color1 : #00c1ff;
+    
+    --color2 : #0073d2;
+    --color3 : #ff707a;
+    --color4 : #ffca2c;
+    --color5 : #ffffda;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    color:var(--white-light);
+    background:#fffbf4;
+}
+
+.content-left,
+.content-rigth{
+    max-height: 600px
+}
+.content-rigth{
+    padding: 0;
+    margin: 0;
+    
+}
+.content-left{
+    background: linear-gradient(to right, #65f4cd 0%,#4799e9 100%) ;
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+.navbar{
+    background-color: var(--color3);
+    padding: 0;
+    max-height: 7vh;
+}
+.navbar-brand{
+    color: white;
+    margin: 5px 0 5px 15px;
+}
+
+/*--------------------------------------------------------------
+# TitleCreate
+--------------------------------------------------------------*/
+
+.title-create{
+    margin-top: 10px;
+    color: var(--color4);
+    font-weight: 700;
+}
+.input-group-text{
+    background-color: var(--color4);
+    color: white;
+    font-weight: 700;
+}
+
+
+/*--------------------------------------------------------------
+# ButtonCreate
+--------------------------------------------------------------*/
+.btn-outline-warning{
+    margin-left: 45%;
+    border: 2px solid var(--color4);
+    font-weight: 700;
+}
+
+.btn-outline-warning:hover{
+    color: white;
+}
+
+/*--------------------------------------------------------------
+# TodoImg
+--------------------------------------------------------------*/
+
+.figure-task{
+    padding: 22px 0 0 25px;
+    margin: 0;
+
+}
+.bg-task{
+    width: 90%;
+    height: 425px;
+    background-size:cover;
+
+}
+
+
+
+
+/*--------------------------------------------------------------
+# TodoCounter
+--------------------------------------------------------------*/
+
+.title-counter-h1{
+    padding-top: 30px;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
+    background-clip: text;
+    color: transparent;
+    
+}
+.title-counter-p{
+    font-size:1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
+    background-clip: text;
+    color: transparent;
+
+    
+}
+
+
+/*--------------------------------------------------------------
+# TodoList
+--------------------------------------------------------------*/
+
+.task-list{
+    list-style: none;
+    margin: 0;
+    margin-top: 35px;
+}
+
+/*--------------------------------------------------------------
+# TodoItem
+--------------------------------------------------------------*/
+
+.item{
+    background: linear-gradient(to right, #7ec9f5 0%,#3957ed 100%);
+    background-attachment: fixed;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+}
+.text-item{
+    padding: 20px 0 20px 0;
+    margin: 0 0 0 10px;
+    font-weight: 700;
+}
+
+.text-item:hover{
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+.btn-close{
+    margin-right: 10px;
+    background-color: var(--color1);
+}
+/*--------------------------------------------------------------
+# TodoSearch
+--------------------------------------------------------------*/
+
+.search{
+    width: 300px;
+    margin: 0;
+    
+}
+
+.btn-outline-success{
+    color: var(--color2) ;
+    border: 2px solid var(--color2);
+    font-weight: 700;
+}
+.btn-outline-success:hover{
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%) !important;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer-msg{
+    color:var(--color2);
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-style: italic;
+    background-color: var(--color4);
+}
+
+
