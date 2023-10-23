@@ -18,32 +18,27 @@ body {
     color:var(--white-light);
     background:#fffbf4;
 }
-
-.content-left,
-.content-rigth{
-    max-height: 600px
+.content-rigth::before {
+    content: "";
+    background-image: url(./img/bg-lines.png);
+    background-size: cover;
+    opacity: 0.3; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 .content-rigth{
     padding: 0;
     margin: 0;
-    
 }
 .content-left{
     background: linear-gradient(to right, #65f4cd 0%,#4799e9 100%) ;
+    display: none;
 }
 
-/*--------------------------------------------------------------
-# Navbar
---------------------------------------------------------------*/
-.navbar{
-    background-color: var(--color3);
-    padding: 0;
-    max-height: 7vh;
-}
-.navbar-brand{
-    color: white;
-    margin: 5px 0 5px 15px;
-}
 
 /*--------------------------------------------------------------
 # TitleCreate
@@ -140,7 +135,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+    max-width: 600px;
 }
 .text-item{
     padding: 20px 0 20px 0;
@@ -174,7 +169,7 @@ body {
 --------------------------------------------------------------*/
 
 .search{
-    width: 300px;
+    max-width: 400px;
     margin: 0;
     
 }
@@ -189,18 +184,62 @@ body {
 }
 
 /*--------------------------------------------------------------
+# TodoButtonAdd
+--------------------------------------------------------------*/
+.contain-btn{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display:none;
+}
+.bxs-plus-circle{
+    font-size: 3rem;
+    color: var(--color3);
+    text-align: center;
+
+}
+.bxs-plus-circle:hover{
+    color: var(--color4);
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .footer-msg{
     color:var(--color2);
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
     font-weight: 700;
     font-size: 1.1rem;
     font-style: italic;
     background-color: var(--color4);
 }
 
+
+/*--------------------------------------------------------------
+# Mediaquery
+--------------------------------------------------------------*/
+@media (max-width: 576px) {
+    .search{
+        max-width: 250px;
+    }
+} 
+
+@media (min-width: 992px) {
+    .content-left{
+        display:block;
+    }
+    
+} 
+
+@media (max-width: 992px) {
+    .contain-btn{
+        display: block;
+    }
+
+} 
 

@@ -8,6 +8,7 @@ import { TitleCreate } from './TitleCreate';
 import { InputCreate } from './InputCreate';
 import { ButtonCreate } from './ButtonCreate';
 import { FooterMessage } from './FooterMessage';
+import { TodoButtonAdd } from './TodoButtonAdd';
 
 
 const defaultTodos = [
@@ -22,9 +23,7 @@ function App() {
   return (
     <div className='container-fluid'> 
 
-      {/* <NavbarTodo/> */}
-
-      <div className='row'>
+      <div className='row row-cols-1 row-cols-lg-2'>
         <div className='col content-left'>
           <TitleCreate/>
           <InputCreate/>
@@ -32,7 +31,7 @@ function App() {
           <TodoImg/>
         </div>
 
-        <div className='col-6 content-rigth'>
+        <div className='col-lg-6 content-rigth'>
           <TodoCounter completed={16} total={18}/>
 
           <TodoSearch/>
@@ -48,7 +47,8 @@ function App() {
           </TodoList>
         </div>
       </div>
-      
+
+      <TodoButtonAdd/> 
       <FooterMessage/>       
 
     </div>
