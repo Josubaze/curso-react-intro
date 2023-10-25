@@ -8,10 +8,10 @@
     --white-light: #ffffffe6;
     --color1 : #00c1ff;
     --color2 : #0073d2;
-    --color3 : #ff707a;
-    --color4 : #ffca2c;
+    --color3 : #FF5722;
+    --color4 : #FFA000;
     --color5 : #ffffda;
-    --color6 : #90ffb1;
+    --color6 : #9EFF22 ;
 }
 body {
     font-family: "Open Sans", sans-serif;
@@ -35,10 +35,8 @@ body {
     margin: 0;
 }
 .content-left{
-    background: linear-gradient(to right, #65f4cd 0%,#4799e9 100%) ;
     display: none;
 }
-
 
 /*--------------------------------------------------------------
 # TitleCreate
@@ -63,10 +61,12 @@ body {
     margin-left: 45%;
     border: 2px solid var(--color4);
     font-weight: 700;
+    color: var(--color4);
 }
 
 .btn-outline-warning:hover{
     color: white;
+    background: var(--color4);
 }
 
 /*--------------------------------------------------------------
@@ -74,7 +74,7 @@ body {
 --------------------------------------------------------------*/
 
 .figure-task{
-    padding: 22px 0 0 25px;
+    padding: 25px 0 0 25px;
     margin: 0;
 
 }
@@ -120,9 +120,29 @@ body {
 .task-list{
     list-style: none;
     margin: 0;
-    margin-top: 35px;
+    
+}
+.scroll-container {
+    max-width: 600px;
+    max-height: 400px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    margin-top: 20px;
+
+}
+.scroll-container::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
 }
 
+.scroll-container::-webkit-scrollbar-track {
+    background: var(--white-light); 
+    border-radius: 20px;      /* color of the tracking area */
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: rgba(198, 198, 198, 0.828);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid  var(--white-light);   /* creates padding around scroll thumb */
+}
 /*--------------------------------------------------------------
 # TodoItem
 --------------------------------------------------------------*/
@@ -135,7 +155,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 600px;
+    max-width: 800px;
 }
 .text-item{
     padding: 20px 0 20px 0;
@@ -143,8 +163,7 @@ body {
     font-weight: 700;
 }
 
-.text-item:hover{
-    cursor: pointer;
+.text-item--completed{
     text-decoration: line-through;
 }
 
@@ -155,6 +174,9 @@ body {
     margin-left: 10px;
 }
 
+.bx-task--active{
+    color: var(--color6);
+}
 
 .bx-task-x:hover{
     color: var(--color3);
@@ -171,9 +193,7 @@ body {
 .search{
     max-width: 400px;
     margin: 0;
-    
 }
-
 .btn-outline-success{
     color: var(--color2) ;
     border: 2px solid var(--color2);
@@ -187,20 +207,41 @@ body {
 # TodoButtonAdd
 --------------------------------------------------------------*/
 .contain-btn{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display:none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
 }
 .bxs-plus-circle{
-    font-size: 3rem;
-    color: var(--color3);
+    color: var(--color1);
     text-align: center;
+    font-size: 4.5rem;
+    border-radius: 50%;
+    border: transparent;
+    background-color: transparent;
+
+}
+.bx-right-arrow-alt{
+    color: var(--color1);
+    text-align: center;
+    font-size: 3rem;
+
+}
+
+.text-button{
+    color: #040b14;
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    background-color: transparent;
+    align-items: center !important;
+    margin: 0;
 
 }
 .bxs-plus-circle:hover{
     color: var(--color4);
     cursor: pointer;
+
 }
 
 
@@ -209,9 +250,8 @@ body {
 --------------------------------------------------------------*/
 
 .footer-msg{
-    color:var(--color2);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 0;
     font-weight: 700;
     font-size: 1.1rem;
@@ -227,19 +267,26 @@ body {
     .search{
         max-width: 250px;
     }
+    .text-button{
+        font-size: 0.8rem;
+    }
+    .bx-right-arrow-alt{
+        font-size: 2.5rem;
+    
+    }
 } 
 
 @media (min-width: 992px) {
     .content-left{
         display:block;
     }
-    
 } 
 
 @media (max-width: 992px) {
     .contain-btn{
-        display: block;
+        display: flex;
     }
 
 } 
+
 
