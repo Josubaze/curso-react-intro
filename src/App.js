@@ -35,6 +35,25 @@ function App() {
       return todoText.includes(searchText);
     })
 
+  const completeTodo = (text) => {
+    const newTodo = [...todos]
+    const todoIndex = newTodo.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodo[todoIndex].completed = 'true';
+    setTodos(newTodo);
+  }
+
+  const deleteTodo = (text) => {
+    const newTodo = [...todos]
+    /*newTodo.filter((todo) => todo.text != text);* este se puede usar para concurrencias*/
+    const todoIndex = newTodo.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodo.splice(todoIndex,1);
+    setTodos(newTodo);
+  }
+
   return (
     <div className='container-fluid'> 
 
@@ -63,6 +82,12 @@ function App() {
                 key={todo.text}
                 text={todo.text}
                 completed={todo.completed}
+                onComplete = {() =>
+                  completeTodo(todo.text)
+                }
+                onDelete = { () => 
+                  deleteTodo(todo.text)
+                }
               />
             )}
           </TodoList>

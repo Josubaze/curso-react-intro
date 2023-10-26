@@ -280,11 +280,15 @@ body {
     .content-left{
         display:block;
     }
+    
 } 
 
 @media (max-width: 992px) {
     .contain-btn{
         display: flex;
+    }
+    .container-list{
+        min-height: 60vh;
     }
 
 } 
