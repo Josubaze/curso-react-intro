@@ -3,7 +3,10 @@ function TodoItem(props){
     return(
           <li className="item border rounded border-0">
             <i class={`bx bx-task ${props.completed && "bx-task--active"}`}
-              onClick={props.onComplete}
+              onClick={() => {
+                props.onComplete();
+                props.onAllCompleted();  
+              }}
             ></i>
             <p className={`text-item ${props.completed && "text-item--completed"}`}>
               {props.text}

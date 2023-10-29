@@ -18,7 +18,7 @@ body {
     color:var(--white-light);
     background:#fffbf4;
 }
-.content-rigth::before {
+body::before {
     content: "";
     background-image: url(./img/bg-lines.png);
     background-size: cover;
@@ -37,7 +37,9 @@ body {
 .content-left{
     display: none;
 }
-
+.content-rigth--successful{
+    display: none;
+}
 /*--------------------------------------------------------------
 # TitleCreate
 --------------------------------------------------------------*/
@@ -84,10 +86,34 @@ body {
     background-size:cover;
 
 }
+/*--------------------------------------------------------------
+# TodoImgSuccessful
+--------------------------------------------------------------*/
+.figure-icon-task{
+    padding-top: 10vh;
 
+}
 
+.icon-task-successful{
+    max-width: 300px;
+    max-height: 350px;
+}
 
-
+/*--------------------------------------------------------------
+# TodoSuccessful
+--------------------------------------------------------------*/
+.text-successful{
+    padding-top: 20px;
+    font-size:2rem;
+    font-weight: 700;
+    color: var(--color1);
+}
+.text-reminder{
+    padding-top: 10px;
+    font-size:1rem;
+    font-weight: 600;
+    color: var(--dark-shadow);
+}
 /*--------------------------------------------------------------
 # TodoCounter
 --------------------------------------------------------------*/
@@ -124,7 +150,7 @@ body {
 }
 .scroll-container {
     max-width: 600px;
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: scroll;
     scroll-behavior: smooth;
     margin-top: 20px;
@@ -274,6 +300,17 @@ body {
         font-size: 2.5rem;
     
     }
+    .icon-task-successful{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .text-successful{
+        font-size:1.2rem;
+    }
+    .text-reminder{
+        font-size: 0.8rem;
+        padding-bottom: 30vh;
+    }
 } 
 
 @media (min-width: 992px) {
@@ -289,6 +326,12 @@ body {
     }
     .container-list{
         min-height: 60vh;
+    }
+    .text-successful{
+        font-size:1.5rem;
+    }
+    .text-reminder{
+        padding-bottom: 10vh;
     }
 
 } 
