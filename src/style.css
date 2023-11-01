@@ -5,7 +5,7 @@
 
 :root{
     --dark-shadow: #040b14;
-    --white-light: #ffffffe6;
+    --white-light: #fffbf4;
     --color1 : #00c1ff;
     --color2 : #0073d2;
     --color3 : #FF5722;
@@ -16,7 +16,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     color:var(--white-light);
-    background:#fffbf4;
+    background:var(--white-light);
 }
 body::before {
     content: "";
@@ -146,28 +146,23 @@ body::before {
 .task-list{
     list-style: none;
     margin: 0;
-    
-}
-.scroll-container {
     max-width: 600px;
-    max-height: 500px;
+    max-height: 400px;
     overflow-y: scroll;
     scroll-behavior: smooth;
     margin-top: 20px;
-
-}
-.scroll-container::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
+    
 }
 
-.scroll-container::-webkit-scrollbar-track {
-    background: var(--white-light); 
-    border-radius: 20px;      /* color of the tracking area */
+.task-list::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
 }
-.scroll-container::-webkit-scrollbar-thumb {
-    background-color: rgba(198, 198, 198, 0.828);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid  var(--white-light);   /* creates padding around scroll thumb */
+
+.task-list::-webkit-scrollbar-track {
+    background: transparent
+}
+.task-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 /*--------------------------------------------------------------
 # TodoItem
@@ -177,6 +172,7 @@ body::before {
     background: linear-gradient(to right, #7ec9f5 0%,#3957ed 100%);
     background-attachment: fixed;
     font-size: 1rem;
+    margin-right: 30px;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
@@ -193,23 +189,34 @@ body::before {
     text-decoration: line-through;
 }
 
-.bx-task,
-.bx-task-x{
-    font-size: 2rem;
+.bx-container{
+    display: flex;
     margin-right: 10px;
     margin-left: 10px;
+    align-items: center;
 }
+
+.bx-container-delete{
+    position:relative;
+    right: -2.5rem;
+}
+
+.icon-svg{
+    width: 26px;
+    height: 26px;
+}
+
 
 .bx-task--active{
     color: var(--color6);
 }
 
-.bx-task-x:hover{
-    color: var(--color3);
+.bx-container-delete:hover .icon-svg{
+    fill: var(--color3);
     cursor: pointer;
 }
-.bx-task:hover{
-    color: var(--color6);
+.bx-container-completed:hover .icon-svg{
+    fill: var(--color6);
     cursor: pointer;
 }
 /*--------------------------------------------------------------
@@ -217,7 +224,7 @@ body::before {
 --------------------------------------------------------------*/
 
 .search{
-    max-width: 400px;
+    max-width: 320px;
     margin: 0;
 }
 .btn-outline-success{
@@ -232,44 +239,33 @@ body::before {
 /*--------------------------------------------------------------
 # TodoButtonAdd
 --------------------------------------------------------------*/
-.contain-btn{
-    display: none;
+
+
+.CreateTodoButton {
+    background-color: #61DAFA;
+    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 50px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-weight: bold;
+    color: #FAFAFA;
+    display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color1);
+    height: 64px;
+    width: 64px;
+
+    transform: rotate(0);
+    transition: .3s ease;
 }
-.bxs-plus-circle{
-    color: var(--color1);
-    text-align: center;
-    font-size: 4.5rem;
-    border-radius: 50%;
-    border: transparent;
-    background-color: transparent;
-
-}
-.bx-right-arrow-alt{
-    color: var(--color1);
-    text-align: center;
-    font-size: 3rem;
-
-}
-
-.text-button{
-    color: #040b14;
-    font-size: 1rem;
-    font-weight: 700;
-    font-style: italic;
-    background-color: transparent;
-    align-items: center !important;
-    margin: 0;
-
-}
-.bxs-plus-circle:hover{
-    color: var(--color4);
-    cursor: pointer;
-
-}
-
+  
+.CreateTodoButton:hover {
+    transform: rotate(224deg);
+  }
 
 /*--------------------------------------------------------------
 # Footer
@@ -311,13 +307,18 @@ body::before {
         font-size: 0.8rem;
         padding-bottom: 30vh;
     }
+    .task-list {
+        max-height: 500px;
+    }
 } 
 
 @media (min-width: 992px) {
     .content-left{
         display:block;
     }
-    
+    .CreateTodoButton {
+        display: none;
+    }
 } 
 
 @media (max-width: 992px) {
@@ -325,7 +326,7 @@ body::before {
         display: flex;
     }
     .container-list{
-        min-height: 60vh;
+        min-height: 70vh;
     }
     .text-successful{
         font-size:1.5rem;
