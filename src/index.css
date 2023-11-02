@@ -1,13 +1,52 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+:root{
+    --dark-shadow: #040b14;
+    --white-light: #fffbf4;
+    --color1 : #00c1ff;
+    --color2 : #0073d2;
+    --color3 : #FF5722;
+    --color4 : #FFA000;
+    --color5 : #ffffda;
+    --color6 : #9EFF22 ;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "Open Sans", sans-serif;
+    color:var(--white-light);
+    background:var(--white-light);
+}
+body::before {
+    content: "";
+    background-image: url(../src/Assets/img/bg-lines.png);
+    background-size: cover;
+    opacity: 0.3; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.content-rigth{
+    padding: 0;
+    margin: 0;
+}
+.content-left{
+    display: none;
+}
+.content-rigth--successful{
+    display: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@media (min-width: 992px) {
+    .content-left{
+        display:block;
+    }
+
+} 
+
+
+
+

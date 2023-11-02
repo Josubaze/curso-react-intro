@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+# TodoItem
+--------------------------------------------------------------*/
+
+.item{
+    background: linear-gradient(to right, #7ec9f5 0%,#3957ed 100%);
+    background-attachment: fixed;
+    font-size: 1rem;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+}
+.text-item{
+    padding: 20px 0 20px 0;
+    margin: 0 0 0 10px;
+    font-weight: 700;
+}
+
+.text-item--completed{
+    text-decoration: line-through;
+}
+
+.bx-container{
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.bx-container-delete{
+    position:relative;
+    right: -2.5rem;
+}
+
+.icon-svg{
+    width: 30px;
+    height: 30px;
+}
+
+
+.bx-task--active{
+    color: var(--color6);
+}
+
+.bx-container-delete:hover .icon-svg{
+    fill: var(--color3);
+    cursor: pointer;
+}
+.bx-container-completed:hover .icon-svg{
+    fill: var(--color6);
+    cursor: pointer;
+}

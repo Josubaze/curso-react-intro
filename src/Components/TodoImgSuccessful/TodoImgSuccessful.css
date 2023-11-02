@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+# TodoImgSuccessful
+--------------------------------------------------------------*/
+.figure-icon-task{
+    padding-top: 10vh;
+
+}
+
+.icon-task-successful{
+    max-width: 300px;
+    max-height: 350px;
+}
+
+@media (max-width: 576px) {
+    .icon-task-successful{
+        max-width: 200px;
+        max-height: 200px;
+    }
+}

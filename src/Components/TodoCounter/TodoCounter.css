@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# TodoCounter
+--------------------------------------------------------------*/
+
+.title-counter-h1{
+    padding-top: 30px;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
+    background-clip: text;
+    color: transparent;
+    
+}
+.title-counter-p{
+    font-size:1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
+    background-clip: text;
+    color: transparent;
+
+    
+}

@@ -1,4 +1,4 @@
-import './style.css';
+import './TitleCreate.css';
 
 function TitleCreate() {
   return (

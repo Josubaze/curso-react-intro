@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# TodoSuccessful
+--------------------------------------------------------------*/
+.text-successful{
+    padding-top: 20px;
+    font-size:2rem;
+    font-weight: 700;
+    color: var(--color1);
+}
+.text-reminder{
+    padding-top: 10px;
+    font-size:1rem;
+    font-weight: 600;
+    color: var(--dark-shadow);
+}
+
+
+@media (max-width: 576px) {
+    .text-successful{
+        font-size:1.2rem;
+    }
+    .text-reminder{
+        font-size: 0.8rem;
+    }
+
+} 
+@media (max-width: 992px) {
+
+    .text-successful{
+        font-size:1.5rem;
+    }
+
+} 

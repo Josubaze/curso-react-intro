@@ -1,0 +1,24 @@
+/*--------------------------------------------------------------
+# TodoSearch
+--------------------------------------------------------------*/
+
+.search{
+    max-width: 320px;
+    margin: 0;
+}
+.btn-outline-success{
+    color: var(--color2) ;
+    border: 2px solid var(--color2);
+    font-weight: 700;
+}
+.btn-outline-success:hover{
+    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%) !important;
+}
+
+
+@media (max-width: 576px) {
+    .search{
+        max-width: 250px;
+    }
+
+} 

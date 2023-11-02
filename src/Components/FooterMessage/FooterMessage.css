@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer-msg{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 0%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-style: italic;
+    background-color: var(--color4);
+}

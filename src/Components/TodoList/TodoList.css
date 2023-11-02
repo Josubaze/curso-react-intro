@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+# TodoList
+--------------------------------------------------------------*/
+
+.task-list{
+    list-style: none;
+    margin: 0;
+    max-width: 800px;
+    max-height: 60vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    margin-top: 20px;
+    
+}
+
+.task-list::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
+}
+
+.task-list::-webkit-scrollbar-track {
+    background: transparent
+}
+.task-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+@media (max-width: 576px) {
+    .task-list {
+        max-height: 65vh;
+    }
+} 
+
+@media (max-width: 992px) {
+    .container-list{
+      min-height: 70vh;
+  }
+
+} 

@@ -1,5 +1,5 @@
-import './style.css';
-import image from "./img/task.png";
+import './TodoImg.css';
+import image from "../../Assets/img/task.png";
 
 function TodoImg() {
   return (

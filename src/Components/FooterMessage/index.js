@@ -1,9 +1,9 @@
 import React from 'react'
-import './style.css';
+import './FooterMessage.css';
 function FooterMessage() {
   return (
     <div className='row '>
-        <div className='col p-0 bar-footer'>
+        <div className='col p-0'>
             <p className='footer-msg  text-center'>Organize your tasks easily!</p>
         </div>
     </div>
