@@ -29,23 +29,10 @@ body::before {
     height: 100%;
     z-index: -1;
 }
-.content-rigth{
-    padding: 0;
-    margin: 0;
-}
-.content-left{
-    display: none;
-}
-.content-rigth--successful{
-    display: none;
-}
 
-@media (min-width: 992px) {
-    .content-left{
-        display:block;
-    }
 
-} 
+
+
 
 
 

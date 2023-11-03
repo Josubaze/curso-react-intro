@@ -1,18 +1,6 @@
 import React from 'react';
-import { TodoCounter } from '../Components/TodoCounter/index';
-import { TodoSearch } from '../Components/TodoSearch/index';
-import { TodoList } from '../Components/TodoList/index';
-import { TodoItem } from '../Components/TodoItem/index';
-import { TodoImg } from '../Components/TodoImg/index';
-import { TitleCreate } from '../Components/TitleCreate/index';
-import { InputCreate } from '../Components/InputCreate/index';
-import { ButtonCreate } from '../Components/ButtonCreate/index';
-import { FooterMessage } from '../Components/FooterMessage/index';
-import { TodoButtonAdd } from '../Components/TodoButtonAdd/index';
-import {TodoImgSuccessful} from '../Components/TodoImgSuccessful/index';
-import { TodoSuccessful } from '../Components/TodoSuccessful/index';
-
 import { useLocalStorage } from '../Hooks/useLocalStorage';
+import { AppUI } from './AppUI';
 
 
 function App() {
@@ -57,62 +45,17 @@ function App() {
     setAllCompleted(result);
   }
   return (
-    <div className='container-fluid'> 
-
-      <div className='row row-cols-1 row-cols-lg-2'>
-        <div className='col content-left'>
-            <TitleCreate/>
-            <InputCreate/>
-            <ButtonCreate/>
-            <TodoImg/>
-          
-        </div>
-
-        <div className='col-lg-6 content-rigth'>
-          {AllCompleted ? (
-            <>
-              <TodoImgSuccessful />
-              <TodoSuccessful/>
-              <TodoButtonAdd/>
-            </>
-          ) : (
-            <>
-              <TodoCounter
-                completed={completedTodos} total={totalTodos}
-              />
-
-              <TodoSearch
-                searchValue = {searchValue}
-                setSearchValue = {setSearchValue}
-              />
-
-              <TodoList>
-                {searchedTodo.map(todo => 
-                  <TodoItem 
-                    key={todo.text}
-                    text={todo.text}
-                    completed={todo.completed}
-                    onComplete = {() =>
-                      completeTodo(todo.text)
-                    }
-                    onDelete = { () => 
-                      deleteTodo(todo.text)
-                    }
-                    onAllCompleted = { () => 
-                      allCompletedTodo(todo.completed)
-                    }
-                  />
-                )}
-              </TodoList>
-              <TodoButtonAdd/>
-
-            </>
-          )} 
-        </div> 
-        
-      </div>
-      <FooterMessage/>       
-    </div>
+    <AppUI
+      AllCompleted = { AllCompleted }
+      completedTodos = { completedTodos }
+      totalTodos = { totalTodos }
+      searchValue = { searchValue }
+      setSearchValue = { setSearchValue }
+      searchedTodo = { searchedTodo }
+      completeTodo = { completeTodo }
+      deleteTodo = { deleteTodo }
+      allCompletedTodo = { allCompletedTodo }
+    />
   );
 }
 
