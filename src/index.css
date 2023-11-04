@@ -14,7 +14,7 @@
 }
 body {
     font-family: "Open Sans", sans-serif;
-    color:var(--white-light);
+    color:var(--dark-shadow);
     background:var(--white-light);
 }
 body::before {

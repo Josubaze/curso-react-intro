@@ -5,12 +5,19 @@ import { AppUI } from './AppUI';
 
 function App() {
 
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', [] );
+  const { item: todos,
+          saveItem: saveTodos,
+          error,
+          loading
+        } = useLocalStorage('TODOS_V1', [] );
   const [searchValue, setSearchValue] = React.useState('');
   const [AllCompleted, setAllCompleted] = React.useState(false);
 
-  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const completedTodos = todos.filter(
+    todo => !! todo.completed
+  ).length;
   const totalTodos = todos.length;
+
   const searchedTodo = todos.filter(
     (todo) => {
       const todoText = todo.text.toLowerCase();
@@ -46,6 +53,8 @@ function App() {
   }
   return (
     <AppUI
+      loading = { loading }
+      error = { error }
       AllCompleted = { AllCompleted }
       completedTodos = { completedTodos }
       totalTodos = { totalTodos }

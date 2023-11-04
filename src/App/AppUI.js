@@ -15,6 +15,8 @@ import {TodoImgSuccessful} from '../Components/TodoImgSuccessful';
 import { TodoSuccessful } from '../Components/TodoSuccessful';
 
 function AppUI({
+    loading,
+    error,
     AllCompleted,
     completedTodos,
     totalTodos,
@@ -56,8 +58,29 @@ function AppUI({
                         searchValue = {searchValue}
                         setSearchValue = {setSearchValue}
                     />
-        
+
                     <TodoList>
+                        { loading
+                            ?(                               
+                                <div class="d-flex justify-content-center">
+                                    <div class="spinner-border text-primary"  role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+                            ): null
+                        }
+                        { error
+                            ?(
+                                <p>¡Ops an error has occurred!</p>
+                            ): null
+                        }
+
+                        { !loading && searchedTodo.length === 0
+                            ?(
+                                <p>Add your first task!</p>
+                            ): null
+                        }
+
                         {searchedTodo.map(todo => 
                         <TodoItem 
                             key={todo.text}

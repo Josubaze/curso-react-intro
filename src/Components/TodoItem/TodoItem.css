@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 700px;
+    color: var(--white-light);
 }
 .text-item{
     padding: 20px 0 20px 0;

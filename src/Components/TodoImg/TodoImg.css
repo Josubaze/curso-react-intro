@@ -3,13 +3,13 @@
 --------------------------------------------------------------*/
 
 .figure-task{
-    padding: 25px 0 0 25px;
+    padding: 25px 0 0 75px;
     margin: 0;
 
 }
 .bg-task{
-    width: 90%;
-    height: 425px;
+    width: 100%;
+    height: 69vh;
     background-size:cover;
     z-index: 1;
 
