@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { TodoContainer } from '../Components/TodoContainer';
 import { TodoContentLeft } from '../Components/TodoContentLeft';
 import { TodoContentRight } from '../Components/TodoContentRight';
@@ -14,99 +16,115 @@ import { TodoButtonAdd } from '../Components/TodoButtonAdd';
 import {TodoImgSuccessful} from '../Components/TodoImgSuccessful';
 import { TodoSuccessful } from '../Components/TodoSuccessful';
 
-function AppUI({
-    loading,
-    error,
-    AllCompleted,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodo,
-    completeTodo,
-    deleteTodo,
-    allCompletedTodo,
-}){
+import { TodosLoading } from '../Components/TodosLoading';
+import { TodosError } from '../Components/TodosError';
+import { TodosEmpy } from '../Components/TodosEmpy';
+import { Modal } from '../Components/Modal';
+
+import { TodoContext } from '../Components/TodoContext';
+
+function AppUI(){
+
+    const {
+            loading,
+            error,
+            allCompleted,
+            searchedTodo,
+            completeTodo,
+            deleteTodo,
+            openModal,
+            setOpenModal,
+    } = React.useContext(TodoContext);
+
     return (
-        <TodoContainer>
+        <>
+            <TodoContainer>
 
-            <TodoContentLeft>
+                <TodoContentLeft>
 
-                <TitleCreate/>
-                <InputCreate/>
-                <ButtonCreate/>
-                <TodoImg/>
+                    <TitleCreate/>
+                    <InputCreate/>
+                    <ButtonCreate/>
+                    <TodoImg/>
 
-            </TodoContentLeft> 
+                </TodoContentLeft> 
 
-            <TodoContentRight>  
 
-                {AllCompleted ? (
-                    <>
-                    <TodoImgSuccessful />
-                    <TodoSuccessful/>
-                    <TodoButtonAdd/>
-                    <FooterMessage/>
-                    </>
-                ) : (
-                    <>
-                    <TodoCounter
-                        completed={completedTodos} total={totalTodos}
-                    />
-        
-                    <TodoSearch
-                        searchValue = {searchValue}
-                        setSearchValue = {setSearchValue}
-                    />
+                <TodoContentRight>  
 
-                    <TodoList>
-                        { loading
-                            ?(                               
-                                <div class="d-flex justify-content-center">
-                                    <div class="spinner-border text-primary"  role="status">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </div>
-                            ): null
-                        }
-                        { error
-                            ?(
-                                <p>¡Ops an error has occurred!</p>
-                            ): null
-                        }
+                    {allCompleted ? (
+                        <>
+                        <TodoImgSuccessful />
+                        <TodoSuccessful/>
 
-                        { !loading && searchedTodo.length === 0
-                            ?(
-                                <p>Add your first task!</p>
-                            ): null
-                        }
+                        <TodoButtonAdd/>
 
-                        {searchedTodo.map(todo => 
-                        <TodoItem 
-                            key={todo.text}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onComplete = {() =>
-                            completeTodo(todo.text)
+                        <FooterMessage/>
+                        </>
+                    ) : (
+                        <>
+    
+                        <TodoCounter/>
+
+                        <TodoSearch/>
+                    
+                        
+                        <TodoList>
+                            { loading
+                                ?(                               
+                                    <TodosLoading/>
+                                ): null
                             }
-                            onDelete = { () => 
-                            deleteTodo(todo.text)
+                            { error
+                                ?(
+                                    <TodosError/>
+                                ): null
                             }
-                            onAllCompleted = { () => 
-                            allCompletedTodo(todo.completed)
+
+                            { !loading && searchedTodo.length === 0
+                                ?(
+                                    <TodosEmpy/>
+                                ): 
+                                null
                             }
-                        />
-                        )}
-                    </TodoList>
-                    <TodoButtonAdd/>
-        
-                    </>
-                )} 
-            </TodoContentRight> 
-            <FooterMessage/>   
+
+                            {searchedTodo.map(todo => 
+                            <TodoItem 
+                                key={todo.text}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onComplete = {() =>
+                                completeTodo(todo.text)
+                                }
+                                onDelete = { () => 
+                                deleteTodo(todo.text)
+                                }
+                                onAllCompleted = { () => 
+                                allCompleted(todo.completed)
+                                }
+                            />
+                            )}
+
+                        </TodoList>
+                        
+                        <TodoButtonAdd/>
             
-        </TodoContainer>       
-        
+                        </>
+                    )} 
+                </TodoContentRight> 
+
+                <FooterMessage/>
+                
+                
+
+            </TodoContainer>       
+            { openModal ?(
+                <Modal>
+                    La funcionalidad de agregar TODOs
+                </Modal>
+            ): null
+            }
+        </>
     );
 }
 
