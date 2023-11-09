@@ -11,7 +11,7 @@ import { TodoImg } from '../Components/TodoImg';
 import { TitleCreate } from '../Components/TitleCreate';
 import { InputCreate } from '../Components/InputCreate';
 import { ButtonCreate } from '../Components/ButtonCreate';
-import { FooterMessage } from '../Components/FooterMessage';
+import { Footer } from '../Components/Footer';
 import { TodoButtonAdd } from '../Components/TodoButtonAdd';
 import {TodoImgSuccessful} from '../Components/TodoImgSuccessful';
 import { TodoSuccessful } from '../Components/TodoSuccessful';
@@ -19,7 +19,9 @@ import { TodoSuccessful } from '../Components/TodoSuccessful';
 import { TodosLoading } from '../Components/TodosLoading';
 import { TodosError } from '../Components/TodosError';
 import { TodosEmpy } from '../Components/TodosEmpy';
+
 import { Modal } from '../Components/Modal';
+import { TodoForm } from '../Components/TodoForm';
 
 import { TodoContext } from '../Components/TodoContext';
 
@@ -59,7 +61,7 @@ function AppUI(){
 
                         <TodoButtonAdd/>
 
-                        <FooterMessage/>
+                        <Footer/>
                         </>
                     ) : (
                         <>
@@ -113,14 +115,14 @@ function AppUI(){
                     )} 
                 </TodoContentRight> 
 
-                <FooterMessage/>
+                <Footer/>
                 
                 
 
             </TodoContainer>       
             { openModal ?(
                 <Modal>
-                    La funcionalidad de agregar TODOs
+                    <TodoForm/>
                 </Modal>
             ): null
             }

@@ -1,6 +1,6 @@
 import React from 'react'
-import './FooterMessage.css';
-function FooterMessage() {
+import './Footer.css';
+function Footer() {
   return (
     <div className='row '>
         <div className='col p-0'>
@@ -11,4 +11,4 @@ function FooterMessage() {
   )
 }
 
-export  {FooterMessage}
+export  {Footer}

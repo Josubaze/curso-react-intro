@@ -6,25 +6,27 @@ const TodoContext =  React.createContext();
 function TodoProvider({children}){
 
     const { item: todos,
-        saveItem: saveTodos,
-        error,
-        loading
+            saveItem: saveTodos,
+            error,
+            loading
     } = useLocalStorage('TODOS_V1', [] );
     const [searchValue, setSearchValue] = React.useState('');
     const [allCompleted, setAllCompleted] = React.useState(false);
-    const [openModal, setOpenModal] = React.useState(true);
+    const [openModal, setOpenModal] = React.useState(false);
 
     const completedTodos = todos.filter(
     todo => !! todo.completed
     ).length;
     const totalTodos = todos.length;
 
-    const searchedTodo = todos.filter(
-    (todo) => {
-        const todoText = todo.text.toLowerCase();
-        const searchText = searchValue.toLowerCase();
-        return todoText.includes(searchText);
-    })
+    const addNewTodo = (text) =>{
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false,
+        });
+        saveTodos(newTodos);
+    };
 
     const completeTodo = (text) => {
     const newTodo = [...todos]
@@ -33,7 +35,7 @@ function TodoProvider({children}){
     );
     newTodo[todoIndex].completed = 'true';
     saveTodos(newTodo);
-    }
+    };
 
     const deleteTodo = (text) => {
     const newTodo = [...todos]
@@ -43,7 +45,14 @@ function TodoProvider({children}){
     );
     newTodo.splice(todoIndex,1);
     saveTodos(newTodo);
-    }
+    };
+
+    const searchedTodo = todos.filter(
+        (todo) => {
+            const todoText = todo.text.toLowerCase();
+            const searchText = searchValue.toLowerCase();
+            return todoText.includes(searchText);
+        });
 
     const allCompletedTodo = (completed) => {
     const newTodo = [...todos]
@@ -52,6 +61,8 @@ function TodoProvider({children}){
     );
     setAllCompleted(result);
     }
+
+    
     return(
         <TodoContext.Provider value={{
             loading,
@@ -67,6 +78,7 @@ function TodoProvider({children}){
             allCompletedTodo,
             openModal,
             setOpenModal,
+            addNewTodo,
         }}>
             {children}
         </TodoContext.Provider>
