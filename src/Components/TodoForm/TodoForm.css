@@ -1,7 +1,7 @@
 .TodoForm-Create{
     width:90%;
     max-width:300px;
-    background-color:var(--white-light);
+    background:var(--white-light);
     padding:33px 40px;
     display:flex;
     justify-content:center;
@@ -17,7 +17,7 @@ label{
     margin-bottom:26px;
 }
 textarea{
-    background-color:#f9fbfc;
+    background-color:var(--white-light);
     border:2px solid #202329;
     border-radius:5%;
     box-shadow:0 5px 50px rgba(32,35,41,.25);
@@ -33,7 +33,7 @@ textarea::placeholder{
     font-weight:400
 }
 textarea:focus{
-    outline-color:#61dafa;
+    outline-color:var(--color8);
 }
 .TodoForm-buttonContainer{margin-top:14px;
     display:flex;
@@ -43,11 +43,11 @@ textarea:focus{
 }
 
 .btn-primary{
-    background-color: #61dafa !important;
-    border-color: #61dafa;
+    background-color: var(--color8) !important;
+    border-color: var(--color8);
 }
 .btn-primary:hover{
     background-color: #61d9fab9 !important;
-    border-color: #61dafa;
+    border-color: var(--color8);
     box-shadow:0 5px 25px rgba(97,218,250,.5);
 }

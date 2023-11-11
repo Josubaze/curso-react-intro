@@ -2,7 +2,12 @@ import './TitleCreate.css';
 
 function TitleCreate() {
   return (
-    <h1 className='title-create text-center'>Create New Task</h1>
+    <div className='row text-center'>
+      <div className='col offset-2'>
+        <h1 className='title-create'>Create New Task</h1>
+      </div>
+    </div>
+    
   )
 }
 

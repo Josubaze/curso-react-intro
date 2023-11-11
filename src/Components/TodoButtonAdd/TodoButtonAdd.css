@@ -3,14 +3,14 @@
 --------------------------------------------------------------*/
 
 .CreateTodoButton {
-    background-color: #61DAFA;
+    background-color: var(--color8);
     box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
     border: none;
     border-radius: 50%;
     cursor: pointer;
     font-size: 60px;
     position: fixed;
-    bottom: 24px;
+    bottom: 8vh;
     right: 24px;
     font-weight: bold;
     color: #FAFAFA;
@@ -27,6 +27,7 @@
 
 .CreateTodoButton:hover {
     transform: rotate(224deg);
+    background-color: var(--color4);
 }
 
 @media (min-width: 992px) {

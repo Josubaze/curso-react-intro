@@ -8,9 +8,12 @@
     --color1 : #00c1ff;
     --color2 : #0073d2;
     --color3 : #FF5722;
-    --color4 : #FFA000;
+    --color4 : #F65423;
     --color5 : #ffffda;
-    --color6 : #9EFF22 ;
+    --color6 : #9EFF22;
+    --color7 : #10BDC3;
+    --color8 : #61DAFA;
+    --color9 :linear-gradient(to right, #9edcff 0%, #10BDC3 100%);
 }
 body {
     font-family: "Open Sans", sans-serif;
@@ -19,8 +22,8 @@ body {
 }
 body::before {
     content: "";
-    background-image: url(../src/Assets/img/bg-lines.png);
-    background-size: cover;
+    background: rgb(16,189,195);
+    background: linear-gradient(56deg, rgba(16,189,195,1) 0%, rgba(140,223,226,1) 12%, rgba(255,255,255,1) 36%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 65%, rgba(112,215,219,1) 88%, rgba(16,189,195,1) 100%);
     opacity: 0.3; 
     position: absolute;
     top: 0;

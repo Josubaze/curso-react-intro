@@ -2,22 +2,23 @@
 # TodoCounter
 --------------------------------------------------------------*/
 
-.title-counter-h1{
-    padding-top: 30px;
+.title-counter{
+    display: flex;
     margin: 0;
-    font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
-    background-clip: text;
-    color: transparent;
-    
+    color: var(--color7); 
+    justify-content: center;
 }
-.title-counter-p{
-    font-size:1.5rem;
-    font-weight: 700;
-    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%);
-    background-clip: text;
-    color: transparent;
 
-    
+.title-counter--p{
+    font-size:1.5rem;
+}
+
+.title-counter--h1{
+    padding-top: 30px;
+    font-size:2rem; 
+}
+
+.counter{
+    color: var(--color4);
 }

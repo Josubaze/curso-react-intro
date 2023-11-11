@@ -3,12 +3,9 @@
 --------------------------------------------------------------*/
 
 .title-create{
-    margin-top: 10px;
+    padding-top: 30px;
     color: var(--color4);
     font-weight: 700;
+    max-width: 400px;
 }
-.input-group-text{
-    background-color: var(--color4);
-    color: white;
-    font-weight: 700;
-}
+

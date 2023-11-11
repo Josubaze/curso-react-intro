@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .item{
-    background: linear-gradient(to right, #7ec9f5 0%,#3957ed 100%);
+    background: var(--color8);
     background-attachment: fixed;
     font-size: 1rem;
     margin-right: 30px;

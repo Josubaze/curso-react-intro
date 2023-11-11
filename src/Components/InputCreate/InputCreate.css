@@ -1,6 +1,15 @@
 /*--------------------------------------------------------------
 # ButtonCreate
 --------------------------------------------------------------*/
+
+
+.form-create-container{
+    min-width: 410px;
+    padding-top: 10px;
+}
+.form-input-create:focus{
+    outline-color:var(--color4);
+}
 .btn-outline-warning{
     margin-left: 45%;
     border: 2px solid var(--color4);

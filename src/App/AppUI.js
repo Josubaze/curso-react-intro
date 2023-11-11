@@ -10,7 +10,6 @@ import { TodoItem } from '../Components/TodoItem';
 import { TodoImg } from '../Components/TodoImg';
 import { TitleCreate } from '../Components/TitleCreate';
 import { InputCreate } from '../Components/InputCreate';
-import { ButtonCreate } from '../Components/ButtonCreate';
 import { Footer } from '../Components/Footer';
 import { TodoButtonAdd } from '../Components/TodoButtonAdd';
 import {TodoImgSuccessful} from '../Components/TodoImgSuccessful';
@@ -35,7 +34,6 @@ function AppUI(){
             completeTodo,
             deleteTodo,
             openModal,
-            setOpenModal,
     } = React.useContext(TodoContext);
 
     return (
@@ -44,10 +42,9 @@ function AppUI(){
 
                 <TodoContentLeft>
 
+                    <TodoImg/>
                     <TitleCreate/>
                     <InputCreate/>
-                    <ButtonCreate/>
-                    <TodoImg/>
 
                 </TodoContentLeft> 
 

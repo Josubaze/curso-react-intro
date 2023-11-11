@@ -2,37 +2,41 @@
 # TodoList
 --------------------------------------------------------------*/
 
-.task-list{
+.container-task{
     list-style: none;
     margin: 0;
     max-width: 800px;
-    max-height: 60vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
     margin-top: 20px;
-    
 }
 
-.task-list::-webkit-scrollbar {
+.container-task::-webkit-scrollbar {
     width: 0px;               /* width of the entire scrollbar */
 }
 
-.task-list::-webkit-scrollbar-track {
+.container-task::-webkit-scrollbar-track {
     background: transparent
 }
-.task-list::-webkit-scrollbar-thumb {
+.container-task::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
 @media (max-width: 576px) {
-    .task-list {
-        max-height: 63vh;
+    .container-task {
+        height: 48vh;
     }
 } 
 
-@media (max-width: 992px) {
-    .container-list{
-      min-height: 70vh;
+@media (min-width: 576px) {
+    .container-task {
+        height: 55vh;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-task{
+      height: 65vh;
   }
 
 } 

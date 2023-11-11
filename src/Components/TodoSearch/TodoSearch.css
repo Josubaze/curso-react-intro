@@ -3,22 +3,39 @@
 --------------------------------------------------------------*/
 
 .search{
-    max-width: 320px;
+    display: flex;
+    max-width: 550px;
     margin: 0;
+    
 }
 .btn-outline-success{
-    color: var(--color2) ;
-    border: 2px solid var(--color2);
+    color: var(--color7) ;
+    border: 2px solid var(--color7);
     font-weight: 700;
 }
 .btn-outline-success:hover{
-    background: linear-gradient(to right, #7ec9f5 0%, #3957ed 100%) !important;
+    background: var(--color7) ;
 }
+
 
 
 @media (max-width: 576px) {
     .search{
         max-width: 250px;
+    }
+
+} 
+
+@media (min-width: 576px) {
+    .search{
+        max-width: 500px;
+    }
+
+} 
+
+@media (min-width: 992px) {
+    .search{
+        max-width: 480px;
     }
 
 } 

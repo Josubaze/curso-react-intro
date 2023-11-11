@@ -30,7 +30,7 @@ function TodoForm() {
     <form className='TodoForm-Create' onSubmit={ onSubmit }>
         <label>Create your task!</label>
         <textarea
-        placeholder='Darle de comer al perro'
+        placeholder='Example: Go to the plaza in the afternoon'
         value={newTodo}
         onChange={onChange}
         />

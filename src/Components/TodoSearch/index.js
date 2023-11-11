@@ -12,9 +12,9 @@ function TodoSearch() {
   return ( 
 
       <div className='row m-0'>
-        <div className=' offset-3 offset-sm-3 col-md-8 offset-md-3 mb-2'> 
-            <form className="search d-flex" role="search">
-              <input className="form-control me-2" type="search" value={searchValue} placeholder="Enter name.." aria-label="Search" 
+        <div className='col offset-2 '> 
+            <form className="search input-group" role="search">
+              <input className="form-control " type="search" value={searchValue} placeholder="Enter description.." aria-label="Search" 
               onChange={
                 (event) => {
                   setSearchValue(event.target.value)

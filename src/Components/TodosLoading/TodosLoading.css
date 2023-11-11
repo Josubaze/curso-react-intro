@@ -1,137 +1,191 @@
-.contend-load{
-    padding-top: 20%;
+.cssload-container * {
+  box-sizing: border-box;
 }
-.loader {
-    width: 8em;
-    height: 8em;
+
+.cssload-container {
+  margin: 38px auto 0 auto;
+  max-width: 1048px;
+}
+
+.cssload-container ul li {
+  list-style: none;
+}
+
+.cssload-flex-container {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.cssload-flex-container li {
+  padding: 19px;
+  height: 188px;
+  width: 188px;
+  margin: 56px 38px;
+  position: relative;
+  text-align: center;
+}
+
+.cssload-loading-center {
+  display: inline-block;
+  position: absolute;
+    /* The color can be custmized, This color is for center cube.*/
+  background: var(--color4);
+  height: 56px;
+  width: 56px;
+  left: 68px;
+  top: 69px;
+  transform: rotate(45deg);
+  border-radius: 6px;
+  animation: pulse 1.3s ease infinite;
+}
+
+.cssload-loading {
+  display: inline-block;
+  position: relative;
+  width: 141px;
+  height: 141px;
+  margin-top: 6px;
+  transform: rotate(45deg);
+}
+
+.cssload-loading:after, .cssload-loading:before {
+  position: absolute;
+  content: '';
+  height: 19px;
+  width: 19px;
+  display: block;
+  top: 0;
+    /* The color can be custmized, This color is for 4 cubes.*/
+  background: var(--color4);
+  border-radius: 6px;
+}
+
+.cssload-loading:after {
+  right: 0;
+  animation: square-tr 2.6s ease infinite;
+  animation-delay: .162.5s;
+}
+
+.cssload-loading:before {
+  animation: square-tl 2.6s ease infinite;
+  animation-delay: .162.5s;
+}
+
+.cssload-loading.cssload-two {
+  position: relative;
+  top: -150px;
+}
+
+.cssload-loading.cssload-two:after, .cssload-loading.cssload-two:before {
+  bottom: 0;
+  top: initial;
+}
+
+.cssload-loading.cssload-two:after {
+  animation: square-br 2.6s ease infinite;
+  animation-direction: reverse;
+}
+
+.cssload-loading.cssload-two:before {
+  animation: square-bl 2.6s ease infinite;
+  animation-direction: reverse;
+}
+
+@keyframes square-tl {
+  0% {
+    transform: translate(0, 0);
   }
-  
-.loader__eye1,
-    .loader__eye2,
-    .loader__mouth1,
-    .loader__mouth2 {
-    animation: eye1 3s ease-in-out infinite;
+
+  25% {
+    transform: translate(0, 117.5px);
   }
-  
-.loader__eye1,
-    .loader__eye2 {
-    transform-origin: 64px 64px;
+
+  50% {
+    transform: translate(117.5px, 117.5px);
   }
-  
-.loader__eye2 {
-    animation-name: eye2;
+
+  75% {
+    transform: translate(117.5px, 0);
   }
-  
-.loader__mouth1 {
-    animation-name: mouth1;
+}
+
+@keyframes square-bl {
+  0% {
+    transform: translate(0, 0);
   }
-  
-.loader__mouth2 {
-    animation-name: mouth2;
-    visibility: hidden;
+
+  25% {
+    transform: translate(0, -117.5px);
   }
-  
-@media (prefers-color-scheme: dark) {
-    :root {
-      --bg: hsl(var(--hue), 90%, 10%);
-      --fg: hsl(var(--hue), 90%, 90%);
-    }
+
+  50% {
+    transform: translate(117.5px, -117.5px);
   }
-  
-@keyframes eye1 {
-    from {
-      transform: rotate(-260deg) translate(0, -56px);
-    }
-  
-    50%,
-      60% {
-      animation-timing-function: cubic-bezier(0.17, 0, 0.58, 1);
-      transform: rotate(-40deg) translate(0, -56px) scale(1);
-    }
-  
-    to {
-      transform: rotate(225deg) translate(0, -56px) scale(0.35);
-    }
+
+  75% {
+    transform: translate(117.5px, 0);
   }
-  
-@keyframes eye2 {
-    from {
-      transform: rotate(-260deg) translate(0, -56px);
-    }
-  
-    50% {
-      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
-    }
-  
-    52.5% {
-      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1, 0);
-    }
-  
-    55%,
-      70% {
-      animation-timing-function: cubic-bezier(0, 0, 0.28, 1);
-      transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
-    }
-  
-    to {
-      transform: rotate(150deg) translate(0, -56px) scale(0.4);
-    }
+}
+
+@keyframes square-tr {
+  0% {
+    transform: translate(0, 0);
   }
-  
-@keyframes eyeBlink {
-    from,
-      25%,
-      75%,
-      to {
-      transform: scaleY(1);
-    }
-  
-    50% {
-      transform: scaleY(0);
-    }
+
+  25% {
+    transform: translate(-117.5px, 0);
   }
-  
-@keyframes mouth1 {
-    from {
-      animation-timing-function: ease-in;
-      stroke-dasharray: 0 351.86;
-      stroke-dashoffset: 0;
-    }
-  
-    25% {
-      animation-timing-function: ease-out;
-      stroke-dasharray: 175.93 351.86;
-      stroke-dashoffset: 0;
-    }
-  
-    50% {
-      animation-timing-function: steps(1, start);
-      stroke-dasharray: 175.93 351.86;
-      stroke-dashoffset: -175.93;
-      visibility: visible;
-    }
-  
-    75%,
-      to {
-      visibility: hidden;
-    }
+
+  50% {
+    transform: translate(-117.5px, 117.5px);
   }
-  
-@keyframes mouth2 {
-    from {
-      animation-timing-function: steps(1, end);
-      visibility: hidden;
-    }
-  
-    50% {
-      animation-timing-function: ease-in-out;
-      visibility: visible;
-      stroke-dashoffset: 0;
-    }
-  
-    to {
-      stroke-dashoffset: -351.86;
-    }
+
+  75% {
+    transform: translate(0, 117.5px);
   }
-  
-  
+}
+
+@keyframes square-br {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-117.5px, 0);
+  }
+
+  50% {
+    transform: translate(-117.5px, -117.5px);
+  }
+
+  75% {
+    transform: translate(0, -117.5px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(inherit) rotate(45deg);
+  }
+
+  75% {
+    transform: scale(0.25) rotate(45deg);
+  }
+}
