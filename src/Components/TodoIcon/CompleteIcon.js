@@ -1,6 +1,7 @@
 import React from 'react'
 import {TodoIcon} from './TodoIcon';
 function CompleteIcon({completed, onComplete, onAllCompleted}) {
+
   return (
     <TodoIcon
       type = 'completed'

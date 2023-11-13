@@ -30,10 +30,11 @@ function AppUI(){
             loading,
             error,
             allCompleted,
-            searchedTodo,
-            completeTodo,
-            deleteTodo,
+            defSearchedTodo,
+            defCompleteTodo,
+            defDeleteTodo,
             openModal,
+            defAllCompletedTodo,
     } = React.useContext(TodoContext);
 
     return (
@@ -55,9 +56,7 @@ function AppUI(){
                         <>
                         <TodoImgSuccessful />
                         <TodoSuccessful/>
-
                         <TodoButtonAdd/>
-
                         <Footer/>
                         </>
                     ) : (
@@ -80,26 +79,26 @@ function AppUI(){
                                 ): null
                             }
 
-                            { !loading && searchedTodo.length === 0
+                            { !loading && defSearchedTodo.length === 0
                                 ?(
                                     <TodosEmpy/>
                                 ): 
                                 null
                             }
 
-                            {searchedTodo.map(todo => 
+                            {defSearchedTodo.map(todo => 
                             <TodoItem 
                                 key={todo.text}
                                 text={todo.text}
                                 completed={todo.completed}
                                 onComplete = {() =>
-                                completeTodo(todo.text)
+                                defCompleteTodo(todo.text)
                                 }
                                 onDelete = { () => 
-                                deleteTodo(todo.text)
+                                defDeleteTodo(todo.text)
                                 }
                                 onAllCompleted = { () => 
-                                allCompleted(todo.completed)
+                                defAllCompletedTodo(todo.completed) //deberia ser true
                                 }
                             />
                             )}

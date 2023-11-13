@@ -28,7 +28,7 @@ function TodoProvider({children}){
         saveTodos(newTodos);
     };
 
-    const completeTodo = (text) => {
+    const defCompleteTodo = (text) => {
     const newTodo = [...todos]
     const todoIndex = newTodo.findIndex(
         (todo) => todo.text === text
@@ -37,7 +37,7 @@ function TodoProvider({children}){
     saveTodos(newTodo);
     };
 
-    const deleteTodo = (text) => {
+    const defDeleteTodo = (text) => {
     const newTodo = [...todos]
     /*newTodo.filter((todo) => todo.text != text);* este se puede usar para concurrencias*/
     const todoIndex = newTodo.findIndex(
@@ -47,20 +47,29 @@ function TodoProvider({children}){
     saveTodos(newTodo);
     };
 
-    const searchedTodo = todos.filter(
+    const defSearchedTodo = todos.filter(
         (todo) => {
             const todoText = todo.text.toLowerCase();
             const searchText = searchValue.toLowerCase();
             return todoText.includes(searchText);
         });
 
-    const allCompletedTodo = (completed) => {
-    const newTodo = [...todos]
-    const result = newTodo.every(
-        (todo) => todo.completed === completed
-    );
-    setAllCompleted(result);
-    }
+    const defAllCompletedTodo = (completed) => {
+        if(completed === 'true'){
+            const newTodo = [...todos];
+            const result = newTodo.every(
+            (todo) => todo.completed === completed
+            );
+            setAllCompleted(result);
+        }else if(completed === 'false'){
+            const newTodo = [...todos];
+            const result = newTodo.every(
+            (todo) => todo.completed === true
+            );
+            setAllCompleted(result);
+        }
+        
+    };
 
     
     return(
@@ -72,10 +81,10 @@ function TodoProvider({children}){
             totalTodos,
             searchValue,
             setSearchValue,
-            searchedTodo,
-            completeTodo,
-            deleteTodo,
-            allCompletedTodo,
+            defSearchedTodo,
+            defCompleteTodo,
+            defDeleteTodo,
+            defAllCompletedTodo,
             openModal,
             setOpenModal,
             addNewTodo,

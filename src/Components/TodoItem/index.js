@@ -22,6 +22,7 @@ function TodoItem(props){
             </p>
             <DeleteIcon
               onDelete = {props.onDelete}
+              onAllCompleted= {props.onAllCompleted}
             />
 
             {/* <i class='bx bx-task-x' 

@@ -7,13 +7,14 @@ const iconTypes = {
     'delete' :(color) => <AiFillDelete className='icon-svg' fill={color}/>,
 };
 
-function TodoIcon({ type, color, onClick, onAllCompleted}) {
 
+function TodoIcon({ type, color, onClick, onAllCompleted}) {
+    
     const handleOnClick = () => {
         onClick(); // Ejecuta el evento onComplete
         onAllCompleted(); // Ejecuta el evento onAllCompleted
-      };
-  return (
+    };
+    return (
     <span
         className={`bx-container bx-container-${type}`}
         onClick={handleOnClick}

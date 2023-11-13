@@ -1,12 +1,12 @@
 .Todo-infoEmpy{
     font-size: 24px;
     font-weight: 700;
-    color: var(--color2);
+    color: var(--color4);
     margin: 0;
     padding-top: 20%;
 }
 
 .icon-addTask{
     font-size: 4rem;
-    color: var(--color2);
+    color: var(--color4);
 }
