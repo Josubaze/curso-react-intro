@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiFillDelete } from "react-icons/ai";
 import { FaCheck } from "react-icons/fa6";
+import { TodoContext } from '../TodoContext';
 
 const iconTypes = {
     'completed' :(color) => <FaCheck className='icon-svg' fill={color}/>,
@@ -8,11 +9,14 @@ const iconTypes = {
 };
 
 
-function TodoIcon({ type, color, onClick, onAllCompleted}) {
-    
+function TodoIcon({ type, color, onClick}) {
+    const {
+        defAllCompletedTodo,
+    } = React.useContext(TodoContext);
+
     const handleOnClick = () => {
         onClick(); // Ejecuta el evento onComplete
-        onAllCompleted(); // Ejecuta el evento onAllCompleted
+        defAllCompletedTodo(); // Ejecuta el evento onAllCompleted
     };
     return (
     <span

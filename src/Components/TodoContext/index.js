@@ -54,21 +54,13 @@ function TodoProvider({children}){
             return todoText.includes(searchText);
         });
 
-    const defAllCompletedTodo = (completed) => {
-        if(completed === 'true'){
-            const newTodo = [...todos];
-            const result = newTodo.every(
-            (todo) => todo.completed === completed
-            );
-            setAllCompleted(result);
-        }else if(completed === 'false'){
-            const newTodo = [...todos];
-            const result = newTodo.every(
-            (todo) => todo.completed === true
-            );
-            setAllCompleted(result);
-        }
+    const defAllCompletedTodo = () => {
         
+        const newTodo = [...todos];
+        const result = newTodo.every(
+        (todo) => todo.completed === 'true'
+        );
+        setAllCompleted(result);
     };
 
     

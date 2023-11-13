@@ -1,19 +1,16 @@
 /*--------------------------------------------------------------
 # TodoImgSuccessful
 --------------------------------------------------------------*/
-.figure-icon-task{
-    padding-top: 10vh;
-
+.figure-task-successful{
+    display: flex;
+    padding-top: 50px;
+    max-width: 600px;
+    max-height: 300px;
+    justify-content: center;
 }
 
-.icon-task-successful{
-    max-width: 300px;
-    max-height: 350px;
+.img-task-successful{
+    width: 280px;
+    height: 280px;
 }
 
-@media (max-width: 576px) {
-    .icon-task-successful{
-        max-width: 200px;
-        max-height: 200px;
-    }
-}

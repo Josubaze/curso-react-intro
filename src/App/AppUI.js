@@ -34,7 +34,6 @@ function AppUI(){
             defCompleteTodo,
             defDeleteTodo,
             openModal,
-            defAllCompletedTodo,
     } = React.useContext(TodoContext);
 
     return (
@@ -57,7 +56,6 @@ function AppUI(){
                         <TodoImgSuccessful />
                         <TodoSuccessful/>
                         <TodoButtonAdd/>
-                        <Footer/>
                         </>
                     ) : (
                         <>
@@ -96,9 +94,6 @@ function AppUI(){
                                 }
                                 onDelete = { () => 
                                 defDeleteTodo(todo.text)
-                                }
-                                onAllCompleted = { () => 
-                                defAllCompletedTodo(todo.completed) //deberia ser true
                                 }
                             />
                             )}
