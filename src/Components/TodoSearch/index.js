@@ -20,7 +20,7 @@ function TodoSearch() {
                   setSearchValue(event.target.value)
                 }
               }></input>
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              <button className="btn btn-outline-success disabled" type="submit">Search</button>
             </form>
         </div>
       </div>

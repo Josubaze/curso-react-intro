@@ -3,13 +3,17 @@
 --------------------------------------------------------------*/
 
 .figure-task{
-    padding: 30px 0 0 100px;
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+    min-height: 450px;
+    padding-top: 30px;
     margin: 0;
 
 }
 .bg-task{
-    min-width: 480px;
-    min-height: 320px;
+    width: 420px;
+    height: 420px;
     background-size:cover;
     z-index: 1;
 

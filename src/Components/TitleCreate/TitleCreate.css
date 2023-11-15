@@ -3,9 +3,9 @@
 --------------------------------------------------------------*/
 
 .title-create{
-    padding-top: 30px;
     color: var(--color4);
     font-weight: 700;
     max-width: 400px;
+    padding-top: 20px;
 }
 

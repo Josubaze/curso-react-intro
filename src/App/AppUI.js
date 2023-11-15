@@ -34,6 +34,7 @@ function AppUI(){
             defCompleteTodo,
             defDeleteTodo,
             openModal,
+            reset,
     } = React.useContext(TodoContext);
 
     return (
@@ -51,7 +52,7 @@ function AppUI(){
 
                 <TodoContentRight>  
 
-                    {allCompleted ? (
+                    {allCompleted && reset  ? (
                         <>
                         <TodoImgSuccessful />
                         <TodoSuccessful/>
