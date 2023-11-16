@@ -26,7 +26,6 @@ function useLocalStorage(itemName, initialValue ){
         setLoading(false);
         setError(true);   
       }  
-      console.log('se ejecuto el useEffect');
     }, 3000);
 
   },[]);
