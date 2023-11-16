@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Josubaze/curso-react-intro.git/static/css/main.502c31d5.css",
-    "main.js": "/Josubaze/curso-react-intro.git/static/js/main.a17ad6fe.js",
-    "static/media/task.png": "/Josubaze/curso-react-intro.git/static/media/task.57ca67bbbd22b08df5a0.png",
-    "static/media/successful.png": "/Josubaze/curso-react-intro.git/static/media/successful.d5c63c60f956ca98cda5.png",
-    "index.html": "/Josubaze/curso-react-intro.git/index.html",
-    "main.502c31d5.css.map": "/Josubaze/curso-react-intro.git/static/css/main.502c31d5.css.map",
-    "main.a17ad6fe.js.map": "/Josubaze/curso-react-intro.git/static/js/main.a17ad6fe.js.map"
+    "main.css": "/curso-react-intro/static/css/main.502c31d5.css",
+    "main.js": "/curso-react-intro/static/js/main.14c8d64d.js",
+    "static/media/task.png": "/curso-react-intro/static/media/task.57ca67bbbd22b08df5a0.png",
+    "static/media/successful.png": "/curso-react-intro/static/media/successful.d5c63c60f956ca98cda5.png",
+    "index.html": "/curso-react-intro/index.html",
+    "main.502c31d5.css.map": "/curso-react-intro/static/css/main.502c31d5.css.map",
+    "main.14c8d64d.js.map": "/curso-react-intro/static/js/main.14c8d64d.js.map"
   },
   "entrypoints": [
     "static/css/main.502c31d5.css",
-    "static/js/main.a17ad6fe.js"
+    "static/js/main.14c8d64d.js"
   ]
 }
